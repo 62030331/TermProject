@@ -1,46 +1,53 @@
 @extends('layout')
+
 @section('content')
-<div class="row">
-	<div class="col-lg-12 margin-tb">
-		<div class="pull-left">
-			<h2>Show Employee</h2>
-            <div class="card-header">
-				<a class="btn btn-primary" 
-                    href="{{ route('employee.create') }}">Insert</a>
-    		</div>
-	</div>
-</div>
 
-<div class="row">
-	<div class="col-lg-12 margin-tb">
-        <table class="table table-bordered">
-			<tr>
-				<td align ="center" >Emp_ID</td>
-				<td align ="center" >Emp_Name</td>
-				<td align ="center" >Emp_LName</td>
-				<td align ="center" >Job</td>
-				<td align ="center" >Chg_Hour</td>
-				<td colspan=2>Operrations</td>
-			</tr>
-			@foreach($employee as $emp)
-			<tr>
-				<td align ="center">{{ $emp->emp_id }}</td>
-				<td >{{ $emp->emp_name }}</td>
-				<td >{{ $emp->emp_lname }}</td>
-				<td align ="center">{{ $emp->job }}</td>
-				<td align ="center">{{ $emp->chg_hour }}</td>
-				<td>
-					<form action="{{ route('employee.destroy',$emp->emp_id) }}" method="POST" >
-						<a class="btn btn-primary" href="{{ route('employee.edit',$emp->emp_id) }}"> Edit</a>
-						@csrf
-						@method('DELETE')
-						<button type="submit" class="btn btn-danger">Delete </button>
+    <div class="row">
 
-					</form>
-				</td>
-			</tr>
-			@endforeach
-        </table>
-	</div>
-</div>
+        <div class="col-md-12">
+            <h2 style="border-bottom: solid 4px;color: #0b2e13;">แบบทดสอบก่อนเรียน</h2>
+        </div>
+
+        <div class="col-md-12">
+
+            <form  method="post" action="{{ url('pages/answerPretests') }}">
+                {{ csrf_field() }}
+                <?php $i = 1;  ;?>
+                @foreach($quiz32 as $pretest)
+
+                    <div class ="thumbnail">
+                        <table>
+                            <tr>
+                                <td>ข้อที่ {{ $i }} )&nbsp; </td>
+                                <td>
+                                    <h4> {!! $pretest->qs_question !!}
+                                            
+                                    </h4>
+
+                                </td>
+                            </tr>
+                        </table>
+                        <ul>
+                            <li style="list-style: none;"><input name="choice[{{ $i }}]" type="radio" value="1"> {!! $pretest->ch_desc !!} </li>
+                            <li style="list-style: none;"><input name="choice[{{ $i }}]" type="radio" value="2"> {!! $pretest->ch_desc !!} </li>
+                            <li style="list-style: none;"><input name="choice[{{ $i }}]" type="radio" value="3"> {!! $pretest->ch_desc !!} </li>
+                            <li style="list-style: none;"><input name="choice[{{ $i }}]" type="radio" value="4"> {!! $pretest->ch_desc !!} </li>
+                        </ul>
+
+                    </div>
+                    <?php $i++ ;?>
+                @endforeach
+                <div class ="thumbnail">
+                    <button type="submit" name="ok" class="btn btn-success">
+                        <i class="glyphicon glyphicon-ok-sign"></i>&nbsp;ส่งคำตอบ
+                    </button>
+                    <a href="{{ url('pages/pretests') }}">
+                        <button type="button" class="btn btn-danger"><i class="glyphicon glyphicon-refresh"></i>&nbsp;ล้างข้อมูล
+                        </button>
+                    </a>
+                </div>
+            </form>
+
+        </div>
+    </div>
 @endsection
