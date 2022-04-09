@@ -16,9 +16,9 @@
 	<div class="col-lg-12 margin-tb">
         <table class="table table-bordered">
 			<tr>
-				<td align ="center" >Choice_id</td>
-				<td align ="center" >Choice_number</td>
-				<td align ="center" >Choice_description</td>
+				<td align ="center" >รหัสตัวเลือก</td>
+				<td align ="center" >เลขที่ตัวเลือก</td>
+				<td align ="center" >อธิบายตัวเลือก</td>
 				<td align ="center" colspan=2>Operations</td>
 			</tr>
 			@foreach($choice as $cho)
@@ -28,7 +28,7 @@
 				<td >{{ $cho->ch_desc }}</td>
 
 				<td align ="center" >
-					<form action="{{ route('choice.destroy',['ch_qs_id'=>$cho->ch_qs_id,'ch_no'=>$cho->ch_no]) }}" method="POST" >
+					<form action="{{ route('choice.destroy',['ch_qs_id'=>$cho->ch_qs_id,'ch_no'=>$cho->ch_no]  ) }}" method="POST" >
 						<a class="btn btn-primary" href="{{ route('choice.edit',$cho->ch_qs_id) }}"> Edit</a>
 						@csrf
 						@method('DELETE')

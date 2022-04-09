@@ -12,8 +12,13 @@ class ClassCheckController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        $classcheck = DB::table('class_check')->get();
+    {   
+        $classcheck = DB::table('class_check')
+                        ->join('course','class_check.cc_crs_code','=','course.crs_code')
+                        ->join('teacher','class_check.cc_tch_code','=','teacher.tch_code')
+                        ->orderby('class_check.cc_id','desc')
+                        ->get();
+
         return view('classcheck.index',compact('classcheck'));
     }
 
@@ -24,7 +29,11 @@ class ClassCheckController extends Controller
      */
     public function create()
     {
-        return view('classcheck.create');
+        $course = DB::table('course')->get();
+        $teacher = DB::table('teacher')->get();
+
+        return view('classcheck.create',compact('course','teacher'));
+        // return view('classcheck.create');
     }
 
     /**

@@ -50,7 +50,7 @@
             </div>
             <div class="form-group">
                 <strong>กลุ่ม</strong>
-                <input type="number" id="enr_crs_code" name="enr_sect" class="form-control" min="1" required placeholder="ปีที่ลงทะเบียนรายวิชา">
+                <input type="number" id="enr_crs_code" name="enr_sect" class="form-control" required placeholder="ปีที่ลงทะเบียนรายวิชา">
             </div>
             <div class="form-group">
                 <strong>enr_seq</strong>

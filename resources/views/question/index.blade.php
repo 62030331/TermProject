@@ -15,16 +15,16 @@
 	<div class="col-lg-12 margin-tb">
         <table class="table table-bordered">
 			<tr>
-				<td align ="center" >qs_id</td>
-				<td align ="center" >qs_question</td>
-				<td align ="center" >qs_ch_no_ans</td>
+				<td align ="center" >รหัสคำถาม</td>
+				<td align ="center" >คำถาม</td>
+				<td align ="center" >ตัวเลือกที่ถูก</td>
 
-				<td align ="center" >qs_ex_time</td>
-				<td align ="center" >qs_score</td>
-				<td align ="center" >qs_crs_code</td>
+				<td align ="center" >เวลาในการทำ</td>
+				<td align ="center" >คะแนน</td>
+				<td align ="center" >คำถามของรายวิชา</td>
 
-				<td align ="center" >qs_tch_code</td>
-				<td align ="center" >qs_ex_date</td>
+				<td align ="center" >คำถามของอาจารย์</td>
+				<td align ="center" >เวลาที่ตั้งคำถาม</td>
 				<td align ="center" colspan=2>Operations</td>
 			</tr>
 			@foreach($question as $qui)
@@ -32,16 +32,17 @@
 				<td align ="center">{{ $qui->qs_id }}</td>
 				<td align ="center" >{{ $qui->qs_question }}</td>
 				<td align ="center">{{ $qui->qs_ch_no_ans }}</td>
-				<td align ="center" >{{ $qui->qs_ex_time }}</td>
 
+				<td align ="center" >{{ $qui->qs_ex_time }}</td>
 				<td align ="center">{{ $qui->qs_score }}</td>
-				<td align ="center" >{{ $qui->qs_crs_code }}</td>
-				<td align ="center">{{ $qui->qs_tch_code }}</td>
+				<td align ="center" >{{ $qui->crs_name }}</td>
+
+				<td align ="center">{{ $qui->tch_name }}</td>
 				<td align ="center" >{{ $qui->qs_ex_date }}</td>
 				
 
 				<td align ="center" >
-					<form action="{{ route('question.destroy',['qs_id'=>$qui->qs_id]) }}" method="POST" >
+					<form action="{{ route('question.destroy',$qui->qs_id) }}" method="POST" >
 						<a class="btn btn-primary" href="{{ route('question.edit',$qui->qs_id) }}"> Edit</a>
 						@csrf
 						@method('DELETE')
