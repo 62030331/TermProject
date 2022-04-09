@@ -36,7 +36,7 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>exc_id</strong>
-                <input type="text" value="{{ $exc->exc_id}}" name="exc_id" class="form-control" placeholder="exc_id">
+                <input type="text" readonly value="{{ $exc->exc_id}}" name="exc_id" class="form-control" placeholder="exc_id">
             </div>
             <div class="form-group">
                 <strong>exc_year</strong>
@@ -48,7 +48,7 @@
             </div>
             <div class="form-group">
                 <strong>exc_crs_code</strong>
-                <input type="text" value="{{ $exc->exc_crs_code}}" name="exc_crs_code" class="form-control" placeholder="exc_crs_code">
+                <input type="text" readonly value="{{ $exc->exc_crs_code}}" name="exc_crs_code" class="form-control" placeholder="exc_crs_code">
             </div>
             <div class="form-group">
                 <strong>exc_sect</strong>
@@ -56,7 +56,7 @@
             </div>
             <div class="form-group">
                 <strong>exc_tch_code</strong>
-                <input type="text" value="{{ $exc->exc_tch_code}}" name="exc_tch_code" class="form-control" placeholder="exc_tch_code">
+                <input type="text" readonly value="{{ $exc->exc_tch_code}}" name="exc_tch_code" class="form-control" placeholder="exc_tch_code">
             </div>
             <div class="form-group">
                 <strong>exc_time</strong>
@@ -65,7 +65,9 @@
             <!-- เปลี่ยน int(11) to varchar(11) for exam_control -->
             <div class="form-group">
                 <strong>exc_status</strong>
-                <input type="text" value="{{ $exc->exc_status }}" name="exc_status" class="form-control" placeholder="exc_status">
+                <input type="radio" name="exc_status" id="exc_status" value="TRUE">TRUE
+                <input type="radio" name="exc_status" id="exc_status" value="FALSE">FALSE
+                <!-- <input type="text" value="{{ $exc->exc_status }}" name="exc_status" class="form-control" placeholder="exc_status"> -->
             </div>
             <div class="form-group">
                 <strong>exc_date_start</strong>

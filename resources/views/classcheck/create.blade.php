@@ -46,8 +46,13 @@
 
 
             <div class="form-group">
-                <strong>Stude Code</strong>
-                <input type="text" name="cc_crs_code" class="form-control" placeholder="Sting <= 10">
+                <strong>รหัสวิชา</strong>
+                <select class="form-control" id="cc_crs_code" name="cc_crs_code" require>
+                    @foreach ($course as $crs)
+                    <option value="{{ $crs->crs_code}}">{{ $crs->crs_code }}&nbsp;//&nbsp;{{ $crs->crs_name }}</option>
+                    @endforeach
+                </select>
+                <!-- <input type="text" name="cc_crs_code" class="form-control" placeholder="Sting <= 10"> -->
             </div>
 
             <div class="form-group">
@@ -74,7 +79,12 @@
 
             <div class="form-group">
                 <strong>TeacherCode</strong>
-                <input type="text" name="cc_tch_code" class="form-control" placeholder="Sting <= 20">
+                <select class="form-control" id="cc_tch_code" name="cc_tch_code" require>
+                    @foreach ($teacher as $tea)
+                    <option value="{{ $tea->tch_code}}">{{ $tea->tch_code }}&nbsp;//&nbsp;{{ $tea->tch_name }}</option>
+                    @endforeach
+                </select>
+                <!-- <input type="text" name="cc_tch_code" class="form-control" placeholder="Sting <= 20"> -->
             </div>
 
 

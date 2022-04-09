@@ -13,7 +13,11 @@ class QuestionController extends Controller
      */
     public function index()
     {
-        $question =  DB::table('question')->get();
+        $question =  DB::table('question')
+        ->join('course', 'question.qs_crs_code', '=', 'course.crs_code')
+        ->join('teacher', 'question.qs_tch_code', '=', 'teacher.tch_code')
+        ->orderby('question.qs_id', 'desc')
+        ->get();
 
         return view('question.index',compact('question'));
     }
@@ -25,7 +29,12 @@ class QuestionController extends Controller
      */
     public function create()
     {
-        return view('question.create');
+        $course = DB::table('course')
+                    ->where('crs_active', '=', 'Y')
+                    ->get();
+        $teacher = DB::table('teacher')->get();
+
+        return view('question.create' ,compact('course','teacher'));
     }
 
     /**
@@ -134,7 +143,6 @@ class QuestionController extends Controller
     {
         DB::table('question')
         ->where('qs_id','=',$id)
-       
         ->delete();
         
         return redirect('question');

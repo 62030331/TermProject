@@ -42,7 +42,7 @@
 				<td align ="center">{{ $ex->ex_total_score }}</td>
 				<td align ="center">{{ $ex->ex_commit_type }}</td>
 				<td align ="center">
-					<form action="{{ route('exam.destroy',$ex->ex_id) }}" method="POST" >
+					<form action="{{ route('exam.destroy',['ex_id'=>$ex->ex_id,'ex_std_code'=>$ex->ex_std_code]) }}" method="POST" >
 						<a class="btn btn-primary" href="{{ route('exam.edit',$ex->ex_id) }}"> Edit</a>
 						@csrf
 						@method('DELETE')

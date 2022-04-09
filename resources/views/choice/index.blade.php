@@ -24,7 +24,7 @@
 			@foreach($choice as $cho)
 			<tr>
 				<td align ="center">{{ $cho->ch_qs_id }}</td>
-				<td align ="center">{{ $cho->ch_no }}</td>
+				<td align ="center" >{{ $cho->ch_no }}</td>
 				<td >{{ $cho->ch_desc }}</td>
 
 				<td align ="center" >

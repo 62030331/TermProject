@@ -136,7 +136,9 @@ class ExamControlController extends Controller
      */
     public function destroy($id)
     {
-        DB::table('exam_control')->where('exc_id','=',$id)->delete();
+        DB::table('exam_control')
+                ->where('exc_id','=',$exc_id)
+                ->delete();
         return redirect('exam_control');
     }
 }

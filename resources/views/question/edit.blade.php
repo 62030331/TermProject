@@ -37,41 +37,41 @@
        
 
             <div class="form-group">
-                <strong>qs_id</strong>
+                <strong>รหัสคำถาม</strong>
                 <input type="text" readonly  value="{{ $qui->qs_id}}"name="qs_id" class="form-control" placeholder="int">
             </div>
 
             <div class="form-group">
-                <strong>qs_question</strong>
+                <strong>คำถาม</strong>
                 <input type="text"   value="{{ $qui->qs_question}}"name="qs_question" class="form-control" placeholder="text">
             </div>
 
             <div class="form-group">
-                <strong>qs_ch_no_ans</strong>
+                <strong>ตัวเลือกที่ถูก</strong>
                 <input type="text"   value="{{ $qui->qs_ch_no_ans}}"name="qs_ch_no_ans" class="form-control" placeholder="int">
             </div>
             <div class="form-group">
-                <strong>qs_ex_time</strong>
+                <strong>เวลาในการทำ</strong>
                 <input type="time"   value="{{ $qui->qs_ex_time}}"name="qs_ex_time" class="form-control" placeholder="int">
                 <!-- ใน php เราเป็น int(11) เป็น vachar ของ qs_ex_time -->
             </div>
 
             <div class="form-group">
-                <strong>qs_score</strong>
+                <strong>คะแนน</strong>
                 <input type="text"   value="{{ $qui->qs_score}}" name="qs_score" class="form-control" placeholder="int">
             </div>
 
             <div class="form-group">
-                <strong>qs_crs_code</strong>
+                <strong>คำถามของรายวิชา</strong>
                 <input type="text"   value="{{ $qui->qs_crs_code}}"name="qs_crs_code" class="form-control" placeholder="vaChar(10)">
             </div>
             <div class="form-group">
-                <strong>qs_tch_code</strong>
+                <strong>คำถามของอาจารย์</strong>
                 <input type="text"   value="{{ $qui->qs_tch_code}}"name="qs_tch_code" class="form-control" placeholder="vaChar(20)">
             </div>
 
             <div class="form-group">
-                <strong>qs_ex_date</strong>
+                <strong>เวลาที่ตั้งคำถาม</strong>
                 <input type="date"   value="{{ $qui->qs_ex_date}}" name="qs_ex_date" class="form-control" placeholder=" date">
             </div>
         

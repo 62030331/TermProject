@@ -53,8 +53,8 @@
 
 
             <div class="form-group">
-                <strong>Stude Code</strong>
-                <input type="text" value="{{ $clck->cc_crs_code}}"name="cc_crs_code" class="form-control" placeholder="Sting <= 10">
+                <strong>รหัสวิชา</strong>
+                <input type="text" readonly value="{{ $clck->cc_crs_code}}"name="cc_crs_code" class="form-control" placeholder="Sting <= 10">
             </div>
 
             <div class="form-group">
@@ -81,7 +81,7 @@
 
             <div class="form-group">
                 <strong>TeacherCode</strong>
-                <input type="text" value="{{ $clck->cc_tch_code}}"name="cc_tch_code" class="form-control" placeholder="Sting <= 20">
+                <input type="text" readonly value="{{ $clck->cc_tch_code}}"name="cc_tch_code" class="form-control" placeholder="Sting <= 20">
             </div>
 
             

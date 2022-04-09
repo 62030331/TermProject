@@ -13,7 +13,10 @@ class CourseConfigController extends Controller
      */
     public function index()
     {
-        $course_config = DB::table('course_config')->get();
+        $course_config = DB::table('course_config')
+                        ->join('course','course_config.ccf_crs_code','=','course.crs_code')
+                        ->orderby('course_config.ccf_year','desc')
+                        ->get();
 
         return view('courseconfig.index',compact('course_config'));
     }
@@ -25,7 +28,11 @@ class CourseConfigController extends Controller
      */
     public function create()
     {
-        return view('courseconfig.create');
+        $course_config = DB::table('course_config')->get();
+        $course = DB::table('course')
+                    ->where('crs_Active', '=', 'Y')
+                    ->get();
+        return view('courseconfig.create',compact('course_config','course'));
     }
 
     /**

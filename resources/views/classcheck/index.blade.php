@@ -33,14 +33,14 @@
 				<td align ="center">{{ $clak->cc_id }}</td>
 				<td align ="center" >{{ $clak->cc_year }}</td>
 				<td align ="center">{{ $clak->cc_term }}</td>
-				<td align ="center" >{{ $clak->cc_crs_code }}</td>
+				<td align ="center" >{{ $clak->crs_name }}</td>
 
 				<td align ="center">{{ $clak->cc_sect }}</td>
 				<td align ="center" >{{ $clak->cc_date }}</td>
 				<td align ="center">{{ $clak->cc_time }}</td>
 				<td align ="center" >{{ $clak->cc_ex_times }}</td>
 
-				<td align ="center" >{{ $clak->cc_tch_code }}</td>
+				<td align ="center" >{{ $clak->tch_name }}</td>
 
 
 				<td align ="center" >

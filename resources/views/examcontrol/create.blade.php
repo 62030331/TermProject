@@ -42,7 +42,12 @@
             </div>
             <div class="form-group">
                 <strong>exc_crs_code</strong>
-                <input type="text" name="exc_crs_code" class="form-control" placeholder="exc_crs_code">
+                <select class="form-control" id="exc_crs_code" name="exc_crs_code" require>
+                    @foreach ($course as $crs)
+                    <option value="{{ $crs->crs_code}}">{{ $crs->crs_code }}&nbsp;//&nbsp;{{ $crs->crs_name }}</option>
+                    @endforeach
+                </select>
+                <!-- <input type="text" name="exc_crs_code" class="form-control" placeholder="exc_crs_code"> -->
             </div>
             <div class="form-group">
                 <strong>exc_sect</strong>
@@ -50,7 +55,12 @@
             </div>
             <div class="form-group">
                 <strong>exc_tch_code</strong>
-                <input type="text" name="exc_tch_code" class="form-control" placeholder="exc_tch_code">
+                <select class="form-control" id="exc_tch_code" name="exc_tch_code" require>
+                    @foreach ($teacher as $tea)
+                    <option value="{{ $tea->tch_code}}">{{ $tea->tch_code }}&nbsp;//&nbsp;{{ $tea->tch_name }}</option>
+                    @endforeach
+                </select>
+                <!-- <input type="text" name="exc_tch_code" class="form-control" placeholder="exc_tch_code"> -->
             </div>
             <div class="form-group">
                 <strong>exc_time</strong>
@@ -59,7 +69,9 @@
             <!-- เปลี่ยน int(11) to varchar(11) for exam_control -->
             <div class="form-group">
                 <strong>exc_status</strong>
-                <input type="text" name="exc_status" class="form-control" placeholder="exc_status">
+                <input type="radio" name="exc_status" id="exc_status" value="TRUE">TRUE
+                <input type="radio" name="exc_status" id="exc_status" value="FALSE">FALSE
+                <!-- <input type="text" name="exc_status" class="form-control" placeholder="exc_status"> -->
             </div>
             <div class="form-group">
                 <strong>exc_date_start</strong>

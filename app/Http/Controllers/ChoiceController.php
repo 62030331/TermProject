@@ -26,7 +26,8 @@ class ChoiceController extends Controller
      */
     public function create()
     {
-        return view('choice.create');
+        $choice = DB::table('choice')->get();
+        return view('choice.create',compact('choice'));
     }
 
     /**

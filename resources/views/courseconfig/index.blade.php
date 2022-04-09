@@ -28,7 +28,7 @@
 				<td align ="center">{{ $ccf->ccf_crs_code }}</td>
 				<td align ="center">{{ $ccf->ccf_num_exam }}</td>
 				<td align ="center">
-					<form action="{{ route('course_config.destroy',$ccf->ccf_crs_code) }}" method="POST" >
+					<form action="{{ route('course_config.destroy',['ccf_crs_code'=>$ccf->ccf_crs_code]) }}" method="POST" >
 						<a class="btn btn-primary" href="{{ route('course_config.edit',$ccf->ccf_crs_code) }}"> Edit</a>
 						@csrf
 						@method('DELETE')

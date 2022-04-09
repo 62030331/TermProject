@@ -135,9 +135,8 @@ class ExamController extends Controller
     public function destroy($id)
     {
         DB::table('exam')
-                        // ->where('ex_id','=',$ex_id)
-                        // ->where('ex_crs_code','=',$ex_crs_code)
-                        ->where('ex_id','=',$id)
+                        ->where('ex_id','=',$ex_id)
+                        ->where('ex_crs_code','=',$ex_crs_code)
                         ->delete();
         
         return redirect('exam');

@@ -36,27 +36,27 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>ex_id</strong>
-                <input type="text" value="{{ $ex->ex_id}}" name="ex_id" class="form-control" placeholder="ex_id">
+                <input type="text" readonly value="{{ $ex->ex_id}}" name="ex_id" class="form-control" placeholder="ex_id">
             </div>
             <div class="form-group">
                 <strong>ex_year</strong>
-                <input type="text" value="{{ $ex->ex_year}}" name="ex_year" class="form-control" placeholder="ex_year">
+                <input type="text" readonly value="{{ $ex->ex_year}}" name="ex_year" class="form-control" placeholder="ex_year">
             </div>
             <div class="form-group">
                 <strong>ex_term</strong>
-                <input type="text" value="{{ $ex->ex_term}}" name="ex_term" class="form-control" placeholder="ex_term">
+                <input type="text" readonly value="{{ $ex->ex_term}}" name="ex_term" class="form-control" placeholder="ex_term">
             </div>
             <div class="form-group">
                 <strong>ex_crs_code</strong>
-                <input type="text" value="{{ $ex->ex_crs_code}}" name="ex_crs_code" class="form-control" placeholder="ex_crs_code">
+                <input type="text" reaonly value="{{ $ex->ex_crs_code}}" name="ex_crs_code" class="form-control" placeholder="ex_crs_code">
             </div>
             <div class="form-group">
                 <strong>ex_crs_sect</strong>
-                <input type="text" value="{{ $ex->ex_crs_sect}}" name="ex_crs_sect" class="form-control" placeholder="ex_crs_sect">
+                <input type="text" readonly value="{{ $ex->ex_crs_sect}}" name="ex_crs_sect" class="form-control" placeholder="ex_crs_sect">
             </div>
             <div class="form-group">
                 <strong>ex_std_code</strong>
-                <input type="text" value="{{ $ex->ex_std_code}}" name="ex_std_code" class="form-control" placeholder="ex_std_code">
+                <input type="text" readonly value="{{ $ex->ex_std_code}}" name="ex_std_code" class="form-control" placeholder="ex_std_code">
             </div>
             <div class="form-group">
                 <strong>ex_time</strong>

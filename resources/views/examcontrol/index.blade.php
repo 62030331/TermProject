@@ -41,7 +41,7 @@
 				<td align ="center">{{ $exc->exc_date_stop }}</td>
 				<td align ="center">
 					<!-- เปลี่ยน int(11) to varchar(11) for exam_control -->
-					<form action="{{ route('exam_control.destroy',$exc->exc_id) }}" method="POST" >
+					<form action="{{ route('exam_control.destroy',['exc_id'=>$exc->exc_id]) }}" method="POST" >
 						<a class="btn btn-primary" href="{{ route('exam_control.edit',$exc->exc_id) }}"> Edit</a>
 						@csrf
 						@method('DELETE')

@@ -14,8 +14,11 @@ class EnrollController extends Controller
      */
     public function index()
     {
-        $enroll = DB::table('enroll')->get();
-
+        $enroll = DB::table('enroll')
+                    ->join('course', 'enroll.enr_crs_code', '=', 'course.crs_code')
+                    ->join('student', 'enroll.enr_std_code', '=', 'student.std_code')
+                    ->orderby('enroll.enr_year', 'desc')
+                    ->get();
         return view('enroll.index',compact('enroll'));
     
     }
@@ -27,7 +30,11 @@ class EnrollController extends Controller
      */
     public function create()
     {
-        return view('enroll.create');
+        $student = DB::table('student')->get();
+        $course = DB::table('course')
+                    ->where('crs_Active', '=', 'Y')
+                    ->get();
+        return view('enroll.create',compact('student','course'));
     }
 
     /**
@@ -119,10 +126,10 @@ class EnrollController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($enr_sect, $enr_seq)
+    public function destroy($enr_std_code, $enr_crs_code)
     {
-        DB::table('enroll')->where('enr_sect','=',$enr_sect)
-                            ->where('enr_seq','=',$enr_seq)
+        DB::table('enroll') ->where('enr_std_code','=',$enr_std_code)
+                            ->where('enr_crs_code','=',$enr_crs_code)
                             ->delete();
         
         return redirect('enroll');
