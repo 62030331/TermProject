@@ -14,11 +14,7 @@ class TeacherTeachController extends Controller
      */
     public function index()
     {
-        $teacherteach =  DB::table('teacher_teach')
-                                ->join('course','teacher_teach.tt_crs_code','=','course.crs_code')
-                                ->join('teacher','teacher_teach.tt_tch_code','=','teacher.tch_code')
-                                ->orderby('teacher_teach.tt_year','desc')
-                                ->get();
+        $teacherteach =  DB::table('teacher_teach')->get();
 
         return view('teacherteach.index',compact('teacherteach'));
     }
@@ -29,13 +25,8 @@ class TeacherTeachController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {   
-        $course = DB::table('course')->get();
-        $teacher = DB::table('teacher')->get();
-
-        return view('teacherteach.create',compact('course','teacher'));
-        
-        //return view('teacherteach.create');
+    {
+        return view('teacherteach.create');
     }
 
     /**
@@ -88,8 +79,6 @@ class TeacherTeachController extends Controller
     {
        
         $teacherteach = DB::table('teacher_teach')->where('tt_crs_code','=',$id)->get ();
-                                                //   ->where('tt_tch_code','=',$tt_tch_code)
-                                                  
         return view('teacherteach.edit', compact('teacherteach'));
         
     }
@@ -112,8 +101,6 @@ class TeacherTeachController extends Controller
         ]);
 
         DB::table('teacher_teach')->where('tt_crs_code','=',$id)->update([
-                                //   ->where('tt_tch_code','=',$request->tt_tch_code)
-                                  
             'tt_year' => $request->tt_year,
             'tt_term' => $request->tt_term,
             'tt_crs_code'=> $request->tt_crs_code,
@@ -134,7 +121,8 @@ class TeacherTeachController extends Controller
     public function destroy($id)
     {
         DB::table('teacher_teach')
-        ->where('tt_crs_code','=',$id)
+        ->where('tt_crs_code','=',$tt_crs_code)
+        ->where('tt_tch_code','=',$tt_tch_code)
         ->delete();
         
         return redirect('teacher_teach');

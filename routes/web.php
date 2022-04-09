@@ -34,16 +34,16 @@ route::delete('enroll.destroy/{enr_sect}/{enr_seq}','App\Http\Controllers\Enroll
 route::resource('exam','App\Http\Controllers\ExamController');//  ยังไม่ทำ
 route::delete('exam.destroy/{ex_id}/{ex_std_code}','App\Http\Controllers\ExamController@destroy')->name('exam.destroy');
 route::resource('exam_control','App\Http\Controllers\ExamControlController');//  ยังไม่ทำ
-//route::delete('exam_control.destroy/{exc_id}','App\Http\Controllers\ExamControlController@destroy')->name('exam_control.destroy');
+route::delete('exam_control.destroy/{exc_id}','App\Http\Controllers\ExamControlController@destroy')->name('exam_control.destroy');
 route::resource('exam_question','App\Http\Controllers\ExamQuestionController');//  ยังไม่ทำ
-//route::delete('exam_question.destroy/{eq_ex_id}/{eq_qs_id}','App\Http\Controllers\ChoiceController@destroy')->name('exam_question.destroy');
+route::delete('exam_question.destroy/{eq_ex_id}/{eq_qs_id}','App\Http\Controllers\ExamQuestionController@destroy')->name('exam_question.destroy');
 route::resource('faculty','App\Http\Controllers\FacultyController');//  ยังไม่ทำ
 route::resource('question','App\Http\Controllers\QuestionController');//  ยังไม่ทำ
-//route::delete('choice.destroy/{ch_qs_id}/{ch_no}','App\Http\Controllers\ChoiceController@destroy')->name('choice.destroy');
+route::delete('question.destroy/{qs_id}','App\Http\Controllers\QuestionController@destroy')->name('question.destroy');
 route::resource('student','App\Http\Controllers\StudentController');//  ยังไม่ทำ
 route::resource('teacher','App\Http\Controllers\TeacherController');// 
 route::resource('teacher_teach','App\Http\Controllers\TeacherTeachController');//  
-//route::delete('choice.destroy/{ch_qs_id}/{ch_no}','App\Http\Controllers\ChoiceController@destroy')->name('choice.destroy');
+route::delete('teacher_teach.destroy/{tt_crs_code}/{tt_tch_code}','App\Http\Controllers\TeacherTeachController@destroy')->name('teacher_teach.destroy');
 //  ยังไม่ทำ
 
 

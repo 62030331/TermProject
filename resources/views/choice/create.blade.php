@@ -30,10 +30,6 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>รหัสตัวเลือก</strong>
-                 <!-- <select class="form control" id="ch_qs_id" name="ch_qs_id" required>
-                    @foreach ($choice as $ch)
-                    <option value="{{ $ch->ch_qs_id }}"> {{$ch->ch_qs_id}} </option>
-                    @endforeach  -->
                  <input type="text" name="ch_qs_id" class="form-control" placeholder="รหัสตัวเลือก (INT)"> 
             </div>
 

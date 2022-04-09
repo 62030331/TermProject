@@ -135,14 +135,9 @@ class ExamQuestionController extends Controller
     public function destroy($id)
     {
         DB::table('exam_question')
-        ->where('eq_ex_id','=',$id)
-        ->where('eq_seq','=',$id)
-        ->where('eq_qs_id','=',$id)
-        ->where('eq_qs_ans','=',$id)
-        ->where('eq_qs_score','=',$id)
-        ->where('eq_date_time','=',$id)
-        ->where('eq_ans_no','=',$id)
-        ->where('eq_score','=',$id)
+        ->where('eq_ex_id','=',$eq_ex_id)
+        ->where('eq_qs_id','=',$eq_qs_id)
+
         ->delete();
         
         return redirect('exam_question');

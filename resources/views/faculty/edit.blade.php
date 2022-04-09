@@ -36,13 +36,13 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
 
             <div class="form-group">
-                <strong>fac_code</strong>
-                <input type="text" readonly value="{{ $fac->fac_code }}" name="fac_code" class="form-control" placeholder="fac_code (INT)">
+                <strong>รหัสคณะ</strong>
+                <input type="text" readonly value="{{ $fac->fac_code }}" name="fac_code" class="form-control" placeholder="โปรดใส่รหัสคณะ">
             </div>
 
             <div class="form-group">
-                <strong>fac_name</strong>
-                <input type="text"readonly value="{{ $fac->fac_name }}"  name="fac_name" class="form-control" placeholder="fac_name (INT)">
+                <strong>ชื่อคณะ</strong>
+                <input type="text" value="{{ $fac->fac_name }}"  name="fac_name" class="form-control" placeholder="โปรดใส่ชื่อคณะ">
             </div>
 
         

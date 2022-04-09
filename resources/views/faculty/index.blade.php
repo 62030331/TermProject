@@ -15,8 +15,8 @@
 	<div class="col-lg-12 margin-tb">
         <table class="table table-bordered">
 			<tr>
-				<td align ="center" >fac_code</td>
-				<td align ="center" >fac_name</td>
+				<td align ="center" >รหัสคณะ</td>
+				<td align ="center" >ชื่อคณะ</td>
 				<td align ="center" colspan=2>Operations</td>
 
 			</tr>
