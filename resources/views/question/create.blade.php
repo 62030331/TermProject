@@ -2,13 +2,14 @@
   
 @section('content')
 <div class="row">
+    <br>
     <div class="col-lg-12 margin-tb">
         <div class="pull-left">
             <h2>เพิ่มคำถาม</h2>
         </div>
-        <div class="pull-right">
+        <!-- <div class="pull-right">
             <a class="btn btn-primary" href="{{ route('question.index') }}"> Back</a>
-        </div>
+        </div> -->
     </div>
 </div>
    
@@ -43,8 +44,8 @@
                 <input type="text"  name="qs_ch_no_ans" class="form-control" placeholder="ข้อถูก">
             </div>
             <div class="form-group">
-                <strong>เวลาในการทำ</strong>
-                <input type="number"   name="qs_ex_time" class="form-control" placeholder="เวลาในการทำ">
+                <strong>ระยะเวลาในการทำ</strong>
+                <input type="time"   name="qs_ex_time" class="form-control" min="1" placeholder="เวลาในการทำ">
                 <!-- ใน php เราเป็น int(11) เป็น vachar ของ qs_ex_time -->
             </div>
 
@@ -56,8 +57,8 @@
             <div class="form-group">
                 <strong>วิชา</strong>
                 <select class="form-control" id="qs_crs_code" name="qs_crs_code" require>
-                    @foreach ($question as $qui)
-                    <option value="{{ $qui->crs_code}}">{{ $qui->crs_code }}&nbsp;//&nbsp;{{ $qui->crs_name }}</option>
+                    @foreach ($course as $crs)
+                    <option value="{{ $crs->crs_code}}">{{ $crs->crs_code }}&nbsp;//&nbsp;{{ $crs->crs_name }}</option>
                     @endforeach
                 </select>
             </div>
@@ -65,8 +66,8 @@
             <div class="form-group">
             <strong>อาจารย์</strong>
             <select class="form-control" id="qs_tch_code" name="qs_tch_code" require>
-                    @foreach ($question as $qui)
-                    <option value="{{ $qui->tch_code}}">{{ $qui->tch_code }}&nbsp;//&nbsp;{{ $qui->tch_name }}</option>
+                    @foreach ($teacher as $tch)
+                    <option value="{{ $tch->tch_code}}">{{ $tch->tch_code }}&nbsp;//&nbsp;{{ $tch->tch_name }}</option>
                     @endforeach
                 </select>
             </div>
@@ -95,9 +96,12 @@
 
         
             <div class="card-footer ml-auto mr-auto" align=center>
-                <button type="reset" class="btn btn-danger">ยกเลิก</button>
-                <button type="submit" class="btn btn-primary">บันทึก</button> 
-            </div>                                                                    
+                 <div class="pull-center">
+                    <a class="btn btn-primary" href="{{ route('question.index') }}"> ย้อนกลับ</a>
+                    <button type="reset" class="btn btn-warning">คืนค่า</button>
+                    <button type="submit" class="btn btn-success">บันทึก</button> 
+                </div>
+            </div>                                                                   
         </div>
      </div>
 </form>

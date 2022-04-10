@@ -2,13 +2,14 @@
   
 @section('content')
 <div class="row">
+    <br>
     <div class="col-lg-12 margin-tb">
         <div class="pull-left">
             <h2>แก้ไขการลงทะเบียน</h2>
         </div>
-        <div class="pull-right">
+        <!-- <div class="pull-right">
             <a class="btn btn-primary" href="{{ route('enroll.index') }}"> Back</a>
-        </div>
+        </div> -->
     </div>
 </div>
 
@@ -59,13 +60,20 @@
                 <input type="text" value="{{ $enr->enr_year}}" name="enr_year" class="form-control" placeholder="ปีที่ลงทะเบียนรายวิชา">
             </div>
             <div class="form-group">
-                <strong>เทอมที่ลงทะเบียนรายวิชา</strong>
-                <input type="text" value="{{ $enr->enr_term }}" name="enr_term" class="form-control" placeholder="เทอมที่ลงทะเบียนรายวิชา">
+                <strong>เทอม</strong>
+                <select class="form-control" name="enr_term" id="enr_term">
+                    <option value="1" @if($enr->enr_term == 1) selected @endif>1</option>
+                    <option value="2" @if($enr->enr_term == 2) selected @endif>2</option>
+                    <option value="S" @if($enr->enr_term == 'S') selected @endif>Summer</option>
+                </select>
             </div>
             <div class="card-footer ml-auto mr-auto" align=center>
-                <button type="reset" class="btn btn-danger">ยกเลิก</button>
-                <button type="submit" class="btn btn-primary">แก้ไข</button> 
-            </div>                                                                    
+                 <div class="pull-center">
+                    <a class="btn btn-primary" href="{{ route('enroll.index') }}"> ย้อนกลับ</a>
+                    <button type="reset" class="btn btn-warning">คืนค่า</button>
+                    <button type="submit" class="btn btn-success">บันทึก</button> 
+                </div>
+            </div>                                                                        
         </div>
      </div>
 </form>

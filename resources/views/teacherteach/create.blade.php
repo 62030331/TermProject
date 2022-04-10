@@ -2,14 +2,16 @@
   
 @section('content')
 <div class="row">
+    <br>
     <div class="col-lg-12 margin-tb">
         <div class="pull-left">
             <h2>เพิ่มรายการสอนของอาจารย์</h2>
         </div>
-        <div class="pull-right">
+        <!-- <div class="pull-right">
             <a class="btn btn-primary" href="{{ route('teacher_teach.index') }}"> Back</a>
-        </div>
+        </div> -->
     </div>
+    
 </div>
    
 <form action="{{ route('teacher_teach.store') }}" method="POST">
@@ -26,7 +28,7 @@
     </div>
     @endif   
     </div> 
-         
+         <br>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>ปีการศึกษา</strong>
@@ -35,7 +37,12 @@
 
             <div class="form-group">
                 <strong>ภาคเรียน</strong>
-                <input type="text" name="tt_term" class="form-control" placeholder="ภาคเรียน">
+                <!-- <input type="text" name="tt_term" class="form-control" placeholder="ภาคเรียน"> -->
+                <select class="form-control" id="tt_term" name="tt_term" require placeholder="ภาคเรียน">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="S">S ( Summer )</option>
+                </select>
             </div>
 
             <div class="form-group">
@@ -62,9 +69,12 @@
                 <!-- <input type="text" name="tt_tch_code" class="form-control" placeholder="Char(20)"> -->
             </div>
             <div class="card-footer ml-auto mr-auto" align=center>
-                <button type="reset" class="btn btn-danger">ยกเลิก</button>
-                <button type="submit" class="btn btn-primary">บันทึก</button> 
-            </div>                                                                    
+                 <div class="pull-center">
+                    <a class="btn btn-primary" href="{{ route('teacher_teach.index') }}"> ย้อนกลับ</a>
+                    <button type="reset" class="btn btn-warning">คืนค่า</button>
+                    <button type="submit" class="btn btn-success">บันทึก</button> 
+                </div>
+            </div>                                                               
         </div>
      </div>
 </form>

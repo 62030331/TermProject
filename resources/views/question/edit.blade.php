@@ -2,13 +2,14 @@
   
 @section('content')
 <div class="row">
+    <br>
     <div class="col-lg-12 margin-tb">
         <div class="pull-left">
             <h2>แก้ไขคำถาม</h2>
         </div>
-        <div class="pull-right">
+        <!-- <div class="pull-right">
             <a class="btn btn-primary" href="{{ route('question.index') }}"> Back</a>
-        </div>
+        </div> -->
     </div>
 </div>
 
@@ -62,7 +63,7 @@
             </div> -->
             @foreach($question as $qui)
                 <strong>ชอยส์ที่ {!! $qui->ch_no !!}</strong>
-                <input type="text" class="form-control" name = "choice{$qui->ch_no}" value="{!! $qui->ch_desc !!}"></input><br>
+                <input type="text" class="form-control" name = "ch_no{!! $qui->ch_no !!}" value="{!! $qui->ch_desc !!}"></input><br>
             @endforeach
 <!--  ---------------------------------------------------------------------------------------------- -->
             <div class="form-group">
@@ -70,8 +71,8 @@
                 <input type="text" value="{{ $qui->qs_ch_no_ans}}"name="qs_ch_no_ans" class="form-control">
             </div>
             <div class="form-group">
-                <strong>เวลาในการทำ</strong>
-                <input type="number"   value="{{ $qui->qs_ex_time}}"name="qs_ex_time" class="form-control">
+                <strong>ระยะเวลาในการทำ</strong>
+                <input type="time" min="1" value="{{ $qui->qs_ex_time}}"name="qs_ex_time" class="form-control">
                 <!-- ใน php เราเป็น int(11) เป็น vachar ของ qs_ex_time -->
             </div>
 
@@ -82,11 +83,15 @@
 
             <div class="form-group">
                 <strong>วิชา</strong>
-                <input type="text" readonly value="{{ $qui->crs_name}}"name="qs_crs_code" class="form-control">
+                <select class="form-control" readonly name="qs_crs_code" id="qs_crs_code">
+                    <option value="{{ $qui->crs_code}}">{{ $qui->crs_name}}</option>
+                </select>
             </div>
             <div class="form-group">
                 <strong>อาจารย์</strong>
-                <input type="text" readonly value="{{ $qui->tch_name}}"name="qs_tch_code" class="form-control">
+                <select class="form-control" readonly name="qs_tch_code" id="qs_tch_code">
+                    <option value="{{ $qui->tch_code}}">{{ $qui->tch_name}}</option>
+                </select>
             </div>
 
             <div class="form-group">
@@ -96,9 +101,12 @@
         
            
             <div class="card-footer ml-auto mr-auto" align=center>
-                <button type="reset" class="btn btn-danger">ยกเลิก</button>
-                <button type="submit" class="btn btn-primary">แก้ไข</button> 
-            </div>                                                                    
+                 <div class="pull-center">
+                    <a class="btn btn-primary" href="{{ route('question.index') }}"> ย้อนกลับ</a>
+                    <button type="reset" class="btn btn-warning">คืนค่า</button>
+                    <button type="submit" class="btn btn-success">บันทึก</button> 
+                </div>
+            </div>                                                                   
         </div>
      </div>
 </form>

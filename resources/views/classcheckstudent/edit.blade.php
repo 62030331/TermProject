@@ -41,7 +41,7 @@
             </div>
 
             <div class="form-group">
-                <strong>รหัสนึกศึกษา</strong>
+                <strong>รหัสนักศึกษา</strong>
                 <input type="text"readonly value="{{ $claks->ccs_std_code }}"  name="ccs_std_code" class="form-control" placeholder="รหัสนึกศึกษา">
             </div>
 

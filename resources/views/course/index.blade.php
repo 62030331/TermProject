@@ -1,6 +1,7 @@
 @extends('layout')
 @section('content')
 <div class="row">
+	<br>
 	<div class="col-lg-12 margin-tb">
 		<div class="pull-left">
 			<h2>แสดงรายวิชา  | | <a href="http://dekwat.buu.in.th:15110/statuswork" > STATUS </a></h2>
@@ -24,7 +25,7 @@
 			<tr>
 				<td align ="center">{{ $crs->crs_code }}</td>
 				<td align ="center" >{{ $crs->crs_name }}</td>
-				<td >{{ $crs->crs_active }}</td>
+				<td align ="center">{{ $crs->crs_active }}</td>
 
 				<td align ="center" >
 					<form action="{{ route('course.destroy',['crs_code'=>$crs->crs_code,'crs_active'=>$crs->crs_active]) }}" method="POST" >

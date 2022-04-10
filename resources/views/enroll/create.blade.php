@@ -2,13 +2,14 @@
   
 @section('content')
 <div class="row">
+    <br>
     <div class="col-lg-12 margin-tb">
         <div class="pull-left">
             <h2>ลงทะเบียน</h2>
         </div>
-        <div class="pull-right">
+        <!-- <div class="pull-right">
             <a class="btn btn-primary" href="{{ route('enroll.index') }}"> Back</a>
-        </div>
+        </div> -->
     </div>
 </div>
    
@@ -37,7 +38,7 @@
                 <select class="form-control" id="enr_term" name="enr_term" require>
                     <option value="1">1</option>
                     <option value="2">2</option>
-                    <option value="S">S</option>
+                    <option value="S">Summer</option>
                 </select>
             </div>
             <div class="form-group">
@@ -65,9 +66,12 @@
                 </select>
             </div>
             <div class="card-footer ml-auto mr-auto" align=center>
-                <button type="reset" class="btn btn-danger">ยกเลิก</button>
-                <button type="submit" class="btn btn-primary">บันทึก</button> 
-            </div>                                                                    
+                 <div class="pull-center">
+                    <a class="btn btn-primary" href="{{ route('enroll.index') }}"> ย้อนกลับ</a>
+                    <button type="reset" class="btn btn-warning">คืนค่า</button>
+                    <button type="submit" class="btn btn-success">บันทึก</button> 
+                </div>
+            </div>                                                                  
         </div>
      </div>
 </form>

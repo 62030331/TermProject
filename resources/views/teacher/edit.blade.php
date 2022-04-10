@@ -2,13 +2,14 @@
   
 @section('content')
 <div class="row">
+    <br>
     <div class="col-lg-12 margin-tb">
         <div class="pull-left">
             <h2>แก้ไขรายชื่ออาจารย์ผู้สอน</h2>
         </div>
-        <div class="pull-right">
+        <!-- <div class="pull-right">
             <a class="btn btn-primary" href="{{ route('teacher.index') }}"> Back</a>
-        </div>
+        </div> -->
     </div>
 </div>
 
@@ -32,7 +33,8 @@
     @endif   
     </div>   
 
-     <div class="row">
+    <div class="row">
+        <br>
         <div class="col-xs-12 col-sm-12 col-md-12">
        
 
@@ -51,8 +53,10 @@
                 <input type="text"   value="{{ $tea->tch_email}}"name="tch_email" class="form-control" placeholder="อีเมลล์">
             </div>
             <div class="form-group">
-                <strong>รหัสคณะที่สังกัด</strong>
-                <input type="text"   value="{{ $tea->tch_fac_code}}"name="tch_fac_code" class="form-control" placeholder="รหัสคณะที่สังกัด">
+                <strong>คณะที่สังกัด</strong>
+                <select class="form-control" name="tch_fac_code" id="tch_fac_code" readonly>
+                    <option value="{{$tea->tch_fac_code}}">{{$tea->fac_name}}</option>
+                </select>
             </div>
 
             <div class="form-group">
@@ -63,9 +67,12 @@
         
            
             <div class="card-footer ml-auto mr-auto" align=center>
-                <button type="reset" class="btn btn-danger">ยกเลิก</button>
-                <button type="submit" class="btn btn-primary">แก้ไข</button> 
-            </div>                                                                    
+                 <div class="pull-center">
+                    <a class="btn btn-primary" href="{{ route('teacher.index') }}"> ย้อนกลับ</a>
+                    <button type="reset" class="btn btn-warning">คืนค่า</button>
+                    <button type="submit" class="btn btn-success">บันทึก</button> 
+                </div>
+            </div>                                                                         
         </div>
      </div>
 </form>

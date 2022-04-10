@@ -1,6 +1,7 @@
 @extends('layout')
 @section('content')
 <div class="row">
+	<br>
 	<div class="col-lg-12 margin-tb">
 		<div class="pull-left">
 			<h2>แสดงข้อสอบและคำถาม  | | <a href="http://dekwat.buu.in.th:15110/statuswork" > STATUS </a></h2>
@@ -15,13 +16,13 @@
 	<div class="col-lg-12 margin-tb">
         <table class="table table-bordered">
 			<tr>
-				<td align ="center" >ลำดับ</td>
+				<td align ="center" >รหัสข้อสอบ</td>
 				<td align ="center" >ลำดับข้อสอบและตัวเลือก</td>
 				<td align ="center" >รหัสคำถาม</td>
-				<td align ="center" >รหัสคำตอบ</td>
+				<td align ="center" >คำตอบ</td>
 				<td align ="center" >คะแนนคำถาม</td>
 				<td align ="center" >วันที่และเวลา</td>
-				<td align ="center" >เลขที่คำตอบ</td>
+				<td align ="center" >ข้อที่เป็นคำตอบคือข้อ</td>
 				<td align ="center" >คะแนน</td>
 				<td align ="center" colspan=2>เครื่องมือ</td>
 			</tr>

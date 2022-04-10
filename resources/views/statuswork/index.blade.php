@@ -32,13 +32,18 @@ a     {color: #FF0000;}
 			| <a href="http://dekwat.buu.in.th:15110/course" > course </a>
 			| <a href="http://dekwat.buu.in.th:15110/enroll" > enroll </a>
 			| <a href="http://dekwat.buu.in.th:15110/exam" > exam </a>
-			| <a href="http://dekwat.buu.in.th:15110/exam_control" > exam_control </a> <br>
+			| <a href="http://dekwat.buu.in.th:15110/exam_control" > exam_control </a> | 
+			<br> 
 			| <a href="http://dekwat.buu.in.th:15110/exam_question" > exam_question </a>
 			| <a href="http://dekwat.buu.in.th:15110/faculty" > faculty </a>
 			| <a href="http://dekwat.buu.in.th:15110/question" > question </a>
 			| <a href="http://dekwat.buu.in.th:15110/student" > student </a>
 			| <a href="http://dekwat.buu.in.th:15110/teacher" > teacher </a>
-			| <a href="http://dekwat.buu.in.th:15110/teacher_teach" > teacher_teach </a>
+			| <a href="http://dekwat.buu.in.th:15110/teacher_teach" > teacher_teach </a>|
+			<br>
+			| <a href="http://dekwat.buu.in.th:15110/" > HOME Welcome </a> 
+			| <a href="http://dekwat.buu.in.th:15110/elle" > EllE </a> 
+			| <a href="http://dekwat.buu.in.th:15110/quiz3" > Quiz 3 </a> 
 			| <a href="http://dekwat.buu.in.th:15111/" > PHP My Admin </a> |
             <div class="card-header">
 				<a class="btn btn-primary" 

@@ -1,6 +1,7 @@
 @extends('layout')
 @section('content')
 <div class="row">
+	<br>
 	<div class="col-lg-12 margin-tb">
 		<div class="pull-left">
 			<h2>แสดงรายการสอนของอาจารย์ | | <a href="http://dekwat.buu.in.th:15110/statuswork" > STATUS </a></h2>
@@ -12,6 +13,7 @@
 </div>
 
 <div class="row">
+	<br>
 	<div class="col-lg-12 margin-tb">
         <table class="table table-bordered">
 			<tr>

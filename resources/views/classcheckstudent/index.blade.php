@@ -15,9 +15,9 @@
 	<div class="col-lg-12 margin-tb">
         <table class="table table-bordered">
 			<tr>
-				<td align ="center" >รหัสตัวเลือก</td>
-				<td align ="center" >รหัสนักศึกษา</td>
-				<td align ="center" colspan=2>เครื่องมือ</td>
+				<td align ="center" >รหัสชั้นเรียน</td>
+				<td align ="center" >นักศึกษา</td>
+				<td align ="center" colspan=2>จัดการ</td>
 
 			</tr>
 			@foreach($classcheckstudent as $claks)

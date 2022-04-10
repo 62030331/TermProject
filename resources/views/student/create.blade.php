@@ -2,12 +2,10 @@
   
 @section('content')
 <div class="row">
+    <br>
     <div class="col-lg-12 margin-tb">
         <div class="pull-left">
             <h2>เพิ่มรายชื่อนิสิต</h2>
-        </div>
-        <div class="pull-right">
-            <a class="btn btn-primary" href="{{ route('student.index') }}"> Back</a>
         </div>
     </div>
 </div>
@@ -28,14 +26,15 @@
     </div> 
          
         <div class="col-xs-12 col-sm-12 col-md-12">
+            <br>
             <div class="form-group">
                 <strong>รหัสนักศึกษา</strong>
-                <input type="text" name="std_code" class="form-control" placeholder="รหัสนักศึกษา(20)">
+                <input type="text" name="std_code" class="form-control" placeholder="รหัสนักศึกษา">
             </div>
 
             <div class="form-group">
                 <strong>ชื่อนักศึกษา</strong>
-                <input type="text" name="std_name" class="form-control" placeholder="ชื่อนักศึกษา(45)">
+                <input type="text" name="std_name" class="form-control" placeholder="ชื่อนักศึกษา">
             </div>
 
             <!-- <div class="form-group">
@@ -43,17 +42,24 @@
                 <input type="text" name="std_email" class="form-control" placeholder="vaChar(45)">
             </div> -->
             <div class="form-group">
-                <strong>รหัสคณะที่สังกัด</strong>
-                <input type="text" name="std_fac_code" class="form-control" placeholder="รหัสคณะที่สังกัด(3)">
+                <strong>คณะที่สังกัด</strong>
+                <select class="form-control" id="std_fac_code" name="std_fac_code">
+                    @foreach($faculty as $fac)
+                    <option value="{{ $fac->fac_code }}">{{$fac->fac_name}}</option>
+                    @endforeach
+                </select>
             </div>
 
             <div class="form-group">
                 <strong>ผู้ใช้งาน</strong>
-                <input type="text" name="std_user_login" class="form-control" placeholder="ผู้ใช้งาน(20)">
+                <input type="text" name="std_user_login" class="form-control" placeholder="ผู้ใช้งาน">
             </div>
             <div class="card-footer ml-auto mr-auto" align=center>
-                <button type="reset" class="btn btn-danger">ยกเลิก</button>
-                <button type="submit" class="btn btn-primary">บันทึก</button> 
+                 <div class="pull-center">
+                    <a class="btn btn-primary" href="{{ route('student.index') }}"> ย้อนกลับ</a>
+                    <button type="reset" class="btn btn-warning">คืนค่า</button>
+                    <button type="submit" class="btn btn-success">บันทึก</button> 
+                </div>
             </div>                                                                    
         </div>
      </div>

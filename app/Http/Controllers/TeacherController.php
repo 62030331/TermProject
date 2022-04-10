@@ -13,8 +13,9 @@ class TeacherController extends Controller
      */
     public function index()
     {
-        $teacher =  DB::table('teacher')->get();
-
+        $teacher =  DB::table('teacher')
+                    ->join('faculty', 'teacher.tch_fac_code', '=', 'faculty.fac_code')
+                    ->get();
         return view('teacher.index',compact('teacher'));
     }
 
@@ -25,7 +26,8 @@ class TeacherController extends Controller
      */
     public function create()
     {
-        return view('teacher.create');
+        $faculty = DB::table('faculty')->get();
+        return view('teacher.create',compact('faculty'));
     }
 
     /**
@@ -84,7 +86,9 @@ class TeacherController extends Controller
     public function edit($id)
     {
        
-        $teacher = DB::table('teacher')->where('tch_code','=',$id)->get ();
+        $teacher = DB::table('teacher')
+                    ->join('faculty', 'teacher.tch_fac_code', '=', 'faculty.fac_code')
+                    ->where('tch_code','=',$id)->get ();
         return view('teacher.edit', compact('teacher'));
         
     }

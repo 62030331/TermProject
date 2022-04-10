@@ -33,7 +33,7 @@ class ExamController extends Controller
     {
         $student = DB::table('student')->get();
         $course = DB::table('course')
-                    ->where('crs_Active', '=', 'Y')
+                    // ->where('crs_Active', '=', 'Y')
                     ->get();
         return view('exam.create',compact('student','course'));
     }

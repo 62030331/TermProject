@@ -2,13 +2,14 @@
   
 @section('content')
 <div class="row">
+    <br>
     <div class="col-lg-12 margin-tb">
         <div class="pull-left">
             <h2>เพิ่มข้อสอบและคำถาม</h2>
         </div>
-        <div class="pull-right">
+        <!-- <div class="pull-right">
             <a class="btn btn-primary" href="{{ route('exam_question.index') }}"> Back</a>
-        </div>
+        </div> -->
     </div>
 </div>
    
@@ -29,8 +30,8 @@
          
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>ลำดับ</strong>
-                <input type="text" name="eq_ex_id" class="form-control" placeholder="ลำดับ">
+                <strong>รหัสข้อสอบ</strong>
+                <input type="text" name="eq_ex_id" class="form-control" placeholder="รหัสข้อสอบ">
             </div>
 
             <div class="form-group">
@@ -39,8 +40,14 @@
             </div>
 
             <div class="form-group">
-                <strong>รหัสคำถาม</strong>
-                <input type="text" name="eq_qs_id" class="form-control" placeholder="รหัสคำถาม">
+                <strong>คำถาม</strong>
+                <select class="form-control" id="eq_qs_id" name="eq_qs_id" require>
+                    @foreach ($question as $q)
+                    <option value="{{ $q->qs_id}}">{{ $q->qs_question }}</option>
+                    @endforeach
+                </select>
+                <!-- <strong>รหัสคำถาม</strong>
+                <input type="text" name="eq_qs_id" class="form-control" placeholder="รหัสคำถาม"> -->
             </div>
 
             <div class="form-group">
@@ -69,9 +76,12 @@
             </div>
 
             <div class="card-footer ml-auto mr-auto" align=center>
-                <button type="reset" class="btn btn-danger">ยกเลิก</button>
-                <button type="submit" class="btn btn-primary">บันทึก</button> 
-            </div>                                                                    
+                 <div class="pull-center">
+                    <a class="btn btn-primary" href="{{ route('exam_question.index') }}"> ย้อนกลับ</a>
+                    <button type="reset" class="btn btn-warning">คืนค่า</button>
+                    <button type="submit" class="btn btn-success">บันทึก</button> 
+                </div>
+            </div>                                                                         
         </div>
      </div>
 </form>

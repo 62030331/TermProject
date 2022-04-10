@@ -18,14 +18,14 @@
 				<td align ="center" >รหัสชั้นเรียน</td>
 				<td align ="center" >ปีการศึกษา</td>
 				<td align ="center" >ภาคเรียน</td>
-				<td align ="center" >รหัสวิชา</td>
+				<td align ="center" >วิชา</td>
 
-				<td align ="center" >กลุ่มที่ลงทะเบียน</td>
+				<td align ="center" >กลุ่ม</td>
 				<td align ="center" >วันที่</td>
 				<td align ="center" >เวลา</td>
-				<td align ="center" >เวลาในการทำข้อสอบ</td>
+				<td align ="center" >เวลาทำข้อสอบ(นาที)</td>
 
-				<td align ="center" >รหัสอาจารย์</td>
+				<td align ="center" >อาจารย์</td>
 				<td align ="center" colspan=2>เครื่องมือ</td>
 			</tr>
 			@foreach($classcheck as $clak)

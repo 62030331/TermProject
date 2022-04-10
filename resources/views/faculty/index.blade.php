@@ -1,6 +1,7 @@
 @extends('layout')
 @section('content')
 <div class="row">
+	<br>
 	<div class="col-lg-12 margin-tb">
 		<div class="pull-left">
 			<h2>แสดงคณะที่สังกัด  | | <a href="http://dekwat.buu.in.th:15110/statuswork" > STATUS </a></h2>

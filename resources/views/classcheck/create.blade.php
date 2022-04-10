@@ -30,23 +30,27 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>รหัสชั้นเรียน</strong>
-                <input type="text" name="cc_id" class="form-control" placeholder=" INT">
+                <input type="text" name="cc_id" class="form-control" placeholder="รหัสชั้นเรียน">
             </div>
 
             <div class="form-group">
                 <strong>ปีการศึกษา</strong>
-                <input type="text" name="cc_year" class="form-control" placeholder="Sting <= 4 ">
+                <input type="text" name="cc_year" class="form-control" placeholder="ปีการศึกษา">
             </div>
 
             <div class="form-group">
-                <strong>ภาคเรียน</strong>
-                <input type="text" name="cc_term" class="form-control" placeholder="Sting = 1">
+                <strong>เทอม</strong>
+                <select class="form-control" name="cc_term" id="cc_term">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="S">Summer</option>
+                </select>
             </div>
 
 
 
             <div class="form-group">
-                <strong>รหัสวิชา</strong>
+                <strong>วิชา</strong>
                 <select class="form-control" id="cc_crs_code" name="cc_crs_code" require>
                     @foreach ($course as $crs)
                     <option value="{{ $crs->crs_code}}">{{ $crs->crs_code }}&nbsp;//&nbsp;{{ $crs->crs_name }}</option>
@@ -56,8 +60,8 @@
             </div>
 
             <div class="form-group">
-                <strong>กลุ่มที่ลงทะเบียน</strong>
-                <input type="text" name="cc_sect" class="form-control" placeholder="Sting <= 4">
+                <strong>กลุ่ม</strong>
+                <input type="text" name="cc_sect" class="form-control" placeholder="กลุ่ม">
             </div>
 
             <div class="form-group">
@@ -73,12 +77,12 @@
             </div>
 
             <div class="form-group">
-                <strong>เวลาในการทำข้อสอบ</strong>
-                <input type="text" name="cc_ex_times" class="form-control" placeholder="Sting <= 20">
+                <strong>เวลาในการทำข้อสอบ(นาที)</strong>
+                <input type="number" name="cc_ex_times" class="form-control" min="1" placeholder="เวลาในการทำข้อสอบ">
             </div>
 
             <div class="form-group">
-                <strong>รหัสอาจารย์</strong>
+                <strong>อาจารย์</strong>
                 <select class="form-control" id="cc_tch_code" name="cc_tch_code" require>
                     @foreach ($teacher as $tea)
                     <option value="{{ $tea->tch_code}}">{{ $tea->tch_code }}&nbsp;//&nbsp;{{ $tea->tch_name }}</option>

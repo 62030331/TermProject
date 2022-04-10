@@ -1,6 +1,7 @@
 @extends('layout')
 @section('content')
 <div class="row">
+	<br>
 	<div class="col-lg-12 margin-tb">
 		<div class="pull-left">
 			<h2>แสดงรายชื่อนิสิต| | <a href="http://dekwat.buu.in.th:15110/statuswork" > STATUS </a></h2>
@@ -12,6 +13,7 @@
 </div>
 
 <div class="row">
+	<br>
 	<div class="col-lg-12 margin-tb">
         <table class="table table-bordered">
 			<tr>
@@ -27,7 +29,7 @@
 				<td align ="center">{{ $std->std_code }}</td>
 				<td align ="center" >{{ $std->std_name }}</td>
 				<td align ="center">{{ $std->std_email }}</td>
-				<td align ="center" >{{ $std->std_fac_code }}</td>
+				<td align ="center" >{{ $std->fac_name }}</td>
 				<td align ="center">{{ $std->std_user_login }}</td>
 				<td align ="center" >
 					<form action="{{ route('student.destroy',$std->std_code) }}" method="POST" >

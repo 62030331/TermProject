@@ -1,6 +1,7 @@
 @extends('layout')
 @section('content')
 <div class="row">
+	<br>
 	<div class="col-lg-12 margin-tb">
 		<div class="pull-left">
 			<h2>การสอบ  | | <a href="http://dekwat.buu.in.th:15110/statuswork" > STATUS </a></h2>
@@ -20,7 +21,7 @@
 				<td align ="center">เทอม</td>
 				<td align ="center">รหัสวิชา</td>
 				<td align ="center">กลุ่ม</td>
-				<td align ="center">รหัสนักศึกษา</td>
+				<td align ="center">นักศึกษา</td>
 				<td align ="center">ระยะเวลาทำข้อสอบ</td>
 				<td align ="center">วันที่เริ่มทำข้อสอบ</td>
 				<td align ="center">วันที่หมดเวลาทำข้อสอบ</td>

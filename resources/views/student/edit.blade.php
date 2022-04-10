@@ -2,13 +2,14 @@
   
 @section('content')
 <div class="row">
+    <br>
     <div class="col-lg-12 margin-tb">
         <div class="pull-left">
             <h2>แก้ไขรายชื่อนิสิต</h2>
         </div>
-        <div class="pull-right">
+        <!-- <div class="pull-right">
             <a class="btn btn-primary" href="{{ route('student.index') }}"> Back</a>
-        </div>
+        </div> -->
     </div>
 </div>
 
@@ -51,8 +52,12 @@
                 <input type="text"   value="{{ $std->std_email}}"name="std_email" class="form-control" placeholder="อีเมลล์">
             </div>
             <div class="form-group">
-                <strong>รหัสคณะที่สังกัด</strong>
-                <input type="text"   value="{{ $std->std_fac_code}}"name="std_fac_code" class="form-control" placeholder="รหัสคณะที่สังกัด">
+                <strong>คณะที่สังกัด</strong>
+                <select class="form-control" name="std_fac_code" id="std_fac_code" require>
+                    @foreach ($faculty as $fac)
+                    <option value="{{$fac->fac_code}}">{{$fac->fac_name}}</option>
+                    @endforeach
+                </select>
             </div>
 
             <div class="form-group">
@@ -63,8 +68,11 @@
         
            
             <div class="card-footer ml-auto mr-auto" align=center>
-                <button type="reset" class="btn btn-danger">ยกเลิก</button>
-                <button type="submit" class="btn btn-primary">แก้ไข</button> 
+                 <div class="pull-center">
+                    <a class="btn btn-primary" href="{{ route('student.index') }}"> ย้อนกลับ</a>
+                    <button type="reset" class="btn btn-warning">คืนค่า</button>
+                    <button type="submit" class="btn btn-success">บันทึก</button> 
+                </div>
             </div>                                                                    
         </div>
      </div>

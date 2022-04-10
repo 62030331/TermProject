@@ -19,6 +19,8 @@ route::resource('statuswork','App\Http\Controllers\STATUSController');
 //choice
 route::resource('choice','App\Http\Controllers\ChoiceController');
 route::delete('choice.destroy/{ch_qs_id}/{ch_no}','App\Http\Controllers\ChoiceController@destroy')->name('choice.destroy');
+// route::get('choice.edit/{ch_qs_id}/{ch_no}','App\Http\Controllers\ChoiceController@edit')->name('choice.edit');
+// route::post('choice.update/{ch_qs_id}/{ch_no}','App\Http\Controllers\ChoiceController@edit')->name('choice.update');
 //class_check
 route::resource('class_check','App\Http\Controllers\ClassCheckController');
 route::delete('class_check.destroy/{cc_id}','App\Http\Controllers\ClassCheckController@destroy')->name('class_check.destroy');

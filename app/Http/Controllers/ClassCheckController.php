@@ -12,13 +12,11 @@ class ClassCheckController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {   
+    {
         $classcheck = DB::table('class_check')
-                        ->join('course','class_check.cc_crs_code','=','course.crs_code')
-                        ->join('teacher','class_check.cc_tch_code','=','teacher.tch_code')
-                        ->orderby('class_check.cc_id','desc')
-                        ->get();
-
+        ->join('course','class_check.cc_crs_code','=','course.crs_code')
+        ->join('teacher','class_check.cc_tch_code','=','teacher.tch_code')
+        ->get();
         return view('classcheck.index',compact('classcheck'));
     }
 
@@ -29,11 +27,10 @@ class ClassCheckController extends Controller
      */
     public function create()
     {
-        $course = DB::table('course')->get();
-        $teacher = DB::table('teacher')->get();
-
-        return view('classcheck.create',compact('course','teacher'));
-        // return view('classcheck.create');
+        $teacher  = DB::table('teacher')->get();
+        $course = DB::table('course') ->get();
+    
+        return view('classcheck.create',compact('teacher','course'));
     }
 
     /**
@@ -92,7 +89,10 @@ class ClassCheckController extends Controller
     public function edit($id)
     {
        
-        $classcheck = DB::table('class_check')->where('cc_id','=',$id)->get ();
+        $classcheck = DB::table('class_check')
+        ->join('course','class_check.cc_crs_code','=','course.crs_code')
+        ->join('teacher','class_check.cc_tch_code','=','teacher.tch_code')
+        ->where('cc_id','=',$id)->get ();
         return view('classcheck.edit', compact('classcheck'));
         
     }

@@ -2,13 +2,14 @@
   
 @section('content')
 <div class="row">
+    <br>
     <div class="col-lg-12 margin-tb">
         <div class="pull-left">
             <h2>เพิ่มรายการควบคุมข้อสอบ</h2>
         </div>
-        <div class="pull-right">
+        <!-- <div class="pull-right">
             <a class="btn btn-primary" href="{{ route('exam_control.index') }}"> Back</a>
-        </div>
+        </div> -->
     </div>
 </div>
    
@@ -38,10 +39,14 @@
             </div>
             <div class="form-group">
                 <strong>ภาคเรียน</strong>
-                <input type="text" name="exc_term" class="form-control" placeholder="ภาคเรียน">
+                <select class="form-control" name="exc_term" id="exc_term">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="S">Summer</option>
+                </select>
             </div>
             <div class="form-group">
-                <strong>รหัสข้อสอบ</strong>
+                <strong>วิชา</strong>
                 <select class="form-control" id="exc_crs_code" name="exc_crs_code" require>
                     @foreach ($course as $crs)
                     <option value="{{ $crs->crs_code}}">{{ $crs->crs_code }}&nbsp;//&nbsp;{{ $crs->crs_name }}</option>
@@ -54,7 +59,7 @@
                 <input type="text" name="exc_sect" class="form-control" placeholder="กลุ่ม">
             </div>
             <div class="form-group">
-                <strong>รหัสอาจารย์</strong>
+                <strong>อาจารย์</strong>
                 <select class="form-control" id="exc_tch_code" name="exc_tch_code" require>
                     @foreach ($teacher as $tea)
                     <option value="{{ $tea->tch_code}}">{{ $tea->tch_code }}&nbsp;//&nbsp;{{ $tea->tch_name }}</option>
@@ -63,8 +68,8 @@
                 <!-- <input type="text" name="exc_tch_code" class="form-control" placeholder="exc_tch_code"> -->
             </div>
             <div class="form-group">
-                <strong>เวลาเริ่มทำข้อสอบ</strong>
-                <input type="time" name="exc_time" class="form-control" placeholder="เวลาเริ่มทำข้อสอบ">
+                <strong>ระยะเวลาทำข้อสอบ</strong>
+                <input type="time" name="exc_time" class="form-control" min="1" placeholder="เวลาเริ่มทำข้อสอบ">
             </div>
             <!-- เปลี่ยน int(11) to varchar(11) for exam_control -->
             <div class="form-group">
@@ -82,9 +87,12 @@
                 <input type="date" name="exc_date_stop" class="form-control" placeholder="วันที่หมดเวลาทำข้อสอบ">
             </div>
             <div class="card-footer ml-auto mr-auto" align=center>
-                <button type="reset" class="btn btn-danger">ยกเลิก</button>
-                <button type="submit" class="btn btn-primary">บันทึก</button> 
-            </div>                                                                    
+                 <div class="pull-center">
+                    <a class="btn btn-primary" href="{{ route('exam_control.index') }}"> ย้อนกลับ</a>
+                    <button type="reset" class="btn btn-warning">คืนค่า</button>
+                    <button type="submit" class="btn btn-success">บันทึก</button> 
+                </div>
+            </div>                                                                          
         </div>
      </div>
 </form>

@@ -17,7 +17,7 @@ class ExamControlController extends Controller
         $exam_control = DB::table('exam_control')
                         ->join('course','exam_control.exc_crs_code','=','course.crs_code')
                         ->join('teacher','exam_control.exc_tch_code','=','teacher.tch_code')
-                        ->orderby('exam_control.exc_id','desc')
+                        ->orderby('exam_control.exc_id','Asc')
                         ->get();
 
         return view('examcontrol.index',compact('exam_control'));
@@ -95,8 +95,11 @@ class ExamControlController extends Controller
      */
     public function edit($id)
     {
-        $exam_control = DB::table('exam_control')->where('exc_id','=',$id)->get();
-        return view('examcontrol.edit',compact('exam_control'));
+        $exam_control = DB::table('exam_control')
+                        ->where('exc_id','=',$id)->get();
+        $course = DB::table('course')->get();
+        $teacher = DB::table('teacher')->get();
+        return view('examcontrol.edit',compact('exam_control','course','teacher'));
     }
 
     /**

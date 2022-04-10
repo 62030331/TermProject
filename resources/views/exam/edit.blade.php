@@ -2,13 +2,14 @@
   
 @section('content')
 <div class="row">
+    <br>
     <div class="col-lg-12 margin-tb">
         <div class="pull-left">
             <h2>แก้ไขการสอบ</h2>
         </div>
-        <div class="pull-right">
+        <!-- <div class="pull-right">
             <a class="btn btn-primary" href="{{ route('exam.index') }}"> Back</a>
-        </div>
+        </div> -->
     </div>
 </div>
 
@@ -44,7 +45,11 @@
             </div>
             <div class="form-group">
                 <strong>เทอม</strong>
-                <input type="text" value="{{ $ex->ex_term}}" name="ex_term" class="form-control" placeholder="เทอม">
+                <select class="form-control" name="ex_term" id="ex_term">
+                    <option value="1" @if($ex->ex_term == 1) selected @endif>1</option>
+                    <option value="2" @if($ex->ex_term == 2) selected @endif>2</option>
+                    <option value="S" @if($ex->ex_term == 'S') selected @endif>Summer</option>
+                </select>
             </div>
             <div class="form-group">
                 <strong>วิชา</strong>
@@ -86,9 +91,12 @@
         
            
             <div class="card-footer ml-auto mr-auto" align=center>
-                <button type="reset" class="btn btn-danger">ยกเลิก</button>
-                <button type="submit" class="btn btn-primary">แก้ไข</button> 
-            </div>                                                                    
+                 <div class="pull-center">
+                    <a class="btn btn-primary" href="{{ route('exam.index') }}"> ย้อนกลับ</a>
+                    <button type="reset" class="btn btn-warning">คืนค่า</button>
+                    <button type="submit" class="btn btn-success">บันทึก</button> 
+                </div>
+            </div>                                                                        
         </div>
      </div>
 </form>
