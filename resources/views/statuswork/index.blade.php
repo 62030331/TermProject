@@ -24,7 +24,7 @@ a     {color: #FF0000;}
 <div class="row">
 	<div class="col-lg-12 margin-tb">
 		<div class="pull-left">
-			<h2>Show statuswork</h2>
+			<h2>แสดงสถานะการทำงาน</h2>
 			| <a href="http://dekwat.buu.in.th:15110/choice" > choice </a>
 			| <a href="http://dekwat.buu.in.th:15110/class_check" > class_check </a>
 			| <a href="http://dekwat.buu.in.th:15110/course_config" > course_config </a>
@@ -52,12 +52,12 @@ a     {color: #FF0000;}
         <table class="table table-bordered">
 			<tr>
 				<!-- <td align ="center" >created_at</td> -->
-				<td align ="center" >update_at</td>
-				<td align ="center" >TIME</td>
-				<td align ="center" >ADMIN ID</td>
-				<td align ="center" >NUMEDIT</td>
-				<td align ="center" >DETAIL</td>
-				<td colspan=2>Operrations</td>
+				<td align ="center" >อัพเดต</td>
+				<td align ="center" >เวลา</td>
+				<td align ="center" >รหัสผู้ดูแล</td>
+				<td align ="center" >จำนวนการแก้ไข</td>
+				<td align ="center" >รายละเอียด</td>
+				<td colspan=2>เครื่องมือ</td>
 			</tr>
 			@foreach($statuswork as $stw)
 			<tr>

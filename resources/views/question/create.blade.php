@@ -4,7 +4,7 @@
 <div class="row">
     <div class="col-lg-12 margin-tb">
         <div class="pull-left">
-            <h2>Add Question</h2>
+            <h2>เพิ่มคำถาม</h2>
         </div>
         <div class="pull-right">
             <a class="btn btn-primary" href="{{ route('question.index') }}"> Back</a>
@@ -29,61 +29,70 @@
          
         <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
-                <strong>รหัสคำถาม</strong>
-                <input type="text" name="qs_id" class="form-control" placeholder="โปรดใส่รหัสคำถาม">
+                <strong>ข้อ</strong>
+                <input type="text" name="qs_id" class="form-control" placeholder="ข้อ">
             </div>
 
             <div class="form-group">
                 <strong>คำถาม</strong>
-                <input type="text"   name="qs_question" class="form-control" placeholder="โปรดกรอกคำถาม">
+                <input type="text"   name="qs_question" class="form-control" placeholder="คำถาม">
             </div>
 
             <div class="form-group">
-                <strong>ตัวเลือกที่ถูก</strong>
-                <select class="form-control" id="qs_ch_no_ans" name="qs_ch_no_ans" require>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                </select>
-                <!-- <input type="text"  name="qs_ch_no_ans" class="form-control" placeholder="int"> -->
+                <strong>ข้อถูก</strong>
+                <input type="text"  name="qs_ch_no_ans" class="form-control" placeholder="ข้อถูก">
             </div>
             <div class="form-group">
                 <strong>เวลาในการทำ</strong>
-                <input type="text"   name="qs_ex_time" class="form-control" placeholder="ระยะเวลาในการทำ">
-
-                <!-- <input type="time"   name="qs_ex_time" class="form-control" placeholder="int"> -->
+                <input type="number"   name="qs_ex_time" class="form-control" placeholder="เวลาในการทำ">
                 <!-- ใน php เราเป็น int(11) เป็น vachar ของ qs_ex_time -->
             </div>
 
             <div class="form-group">
                 <strong>คะแนน</strong>
-                <input type="text"    name="qs_score" class="form-control" placeholder="คะแนนของข้อนี้">
+                <input type="text"    name="qs_score" class="form-control" placeholder="คะแนน">
             </div>
 
             <div class="form-group">
-                <strong>คำถามของรายวิชา</strong>
+                <strong>วิชา</strong>
                 <select class="form-control" id="qs_crs_code" name="qs_crs_code" require>
-                @foreach ($course as $crs)
-                    <option value="{{ $crs->crs_code}}">{{ $crs->crs_code }}&nbsp;//&nbsp;{{ $crs->crs_name }}</option>
-                @endforeach
+                    @foreach ($question as $qui)
+                    <option value="{{ $qui->crs_code}}">{{ $qui->crs_code }}&nbsp;//&nbsp;{{ $qui->crs_name }}</option>
+                    @endforeach
                 </select>
-            <!-- <input type="text"   name="qs_crs_code" class="form-control" placeholder="vaChar(10)"> -->
             </div>
+            
             <div class="form-group">
-                <strong>คำถามของอาจารย์</strong>
-                <select class="form-control" id="qs_tch_code" name="qs_tch_code" require>
-                @foreach ($teacher as $tch)
-                    <option value="{{ $tch->tch_code}}">{{ $tch->tch_code }}&nbsp;//&nbsp;{{ $tch->tch_name }}</option>
-                @endforeach
+            <strong>อาจารย์</strong>
+            <select class="form-control" id="qs_tch_code" name="qs_tch_code" require>
+                    @foreach ($question as $qui)
+                    <option value="{{ $qui->tch_code}}">{{ $qui->tch_code }}&nbsp;//&nbsp;{{ $qui->tch_name }}</option>
+                    @endforeach
                 </select>
-                <!-- <input type="text"   name="qs_tch_code" class="form-control" placeholder="vaChar(20)"> -->
             </div>
 
             <div class="form-group">
-                <strong>เวลาที่ตั้งคำถาม</strong>
-                <input type="date"    name="qs_ex_date" class="form-control" placeholder=" ">
+                <strong>วันที่ทำข้อสอบ</strong>
+                <input type="date"  name="qs_ex_date" class="form-control">
             </div>
+<!--  ---------------------------------------------------------------------------------------------- -->
+            <div class="form-group">
+                <strong>ชอยส์ที่ 1</strong>
+                <input type="text" name="ch_no1" class="form-control" placeholder="ตัวเลือกที่ 1">
+            </div>
+            <div class="form-group">
+                <strong>ชอยส์ที่ 2</strong>
+                <input type="text" name="ch_no2" class="form-control" placeholder="ตัวเลือกที่ 2">
+            </div>
+            <div class="form-group">
+                <strong>ชอยส์ที่ 3</strong>
+                <input type="text" name="ch_no3" class="form-control" placeholder="ตัวเลือกที่ 3">
+            </div>
+            <div class="form-group">
+                <strong>ชอยส์ที่ 4</strong>
+                <input type="text" name="ch_no4" class="form-control" placeholder="ตัวเลือกที่ 4">
+            </div>
+
         
             <div class="card-footer ml-auto mr-auto" align=center>
                 <button type="reset" class="btn btn-danger">ยกเลิก</button>

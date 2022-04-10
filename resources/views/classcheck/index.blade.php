@@ -3,7 +3,7 @@
 <div class="row">
 	<div class="col-lg-12 margin-tb">
 		<div class="pull-left">
-			<h2>Show Class Check  | | <a href="http://dekwat.buu.in.th:15110/statuswork" > STATUS </a></h2>
+			<h2>ตรวจสอบชั้นเรียน  | | <a href="http://dekwat.buu.in.th:15110/statuswork" > STATUS </a></h2>
             <div class="card-header">
 				<a class="btn btn-primary" 
                     href="{{ route('class_check.create') }}">Insert</a>
@@ -15,18 +15,18 @@
 	<div class="col-lg-12 margin-tb">
         <table class="table table-bordered">
 			<tr>
-				<td align ="center" >Class ID</td>
-				<td align ="center" >Year</td>
-				<td align ="center" >Term</td>
-				<td align ="center" >Student Code</td>
+				<td align ="center" >รหัสชั้นเรียน</td>
+				<td align ="center" >ปีการศึกษา</td>
+				<td align ="center" >ภาคเรียน</td>
+				<td align ="center" >รหัสวิชา</td>
 
-				<td align ="center" >Sect</td>
-				<td align ="center" >Date</td>
-				<td align ="center" >Time</td>
-				<td align ="center" >ExamTime</td>
+				<td align ="center" >กลุ่มที่ลงทะเบียน</td>
+				<td align ="center" >วันที่</td>
+				<td align ="center" >เวลา</td>
+				<td align ="center" >เวลาในการทำข้อสอบ</td>
 
-				<td align ="center" >TeacherCode</td>
-				<td align ="center" colspan=2>Operations</td>
+				<td align ="center" >รหัสอาจารย์</td>
+				<td align ="center" colspan=2>เครื่องมือ</td>
 			</tr>
 			@foreach($classcheck as $clak)
 			<tr>

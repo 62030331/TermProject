@@ -4,7 +4,7 @@
 <div class="row">
     <div class="col-lg-12 margin-tb">
         <div class="pull-left">
-            <h2>Add TeacherTeach</h2>
+            <h2>เพิ่มรายการสอนของอาจารย์</h2>
         </div>
         <div class="pull-right">
             <a class="btn btn-primary" href="{{ route('teacher_teach.index') }}"> Back</a>
@@ -34,8 +34,8 @@
             </div>
 
             <div class="form-group">
-                <strong>เทอม</strong>
-                <input type="text" name="tt_term" class="form-control" placeholder="เทอม">
+                <strong>ภาคเรียน</strong>
+                <input type="text" name="tt_term" class="form-control" placeholder="ภาคเรียน">
             </div>
 
             <div class="form-group">

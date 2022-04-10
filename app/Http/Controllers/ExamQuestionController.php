@@ -132,7 +132,7 @@ class ExamQuestionController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($eq_ex_id,$eq_qs_id)
     {
         DB::table('exam_question')
         ->where('eq_ex_id','=',$eq_ex_id)

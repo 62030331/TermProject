@@ -3,7 +3,7 @@
 <div class="row">
 	<div class="col-lg-12 margin-tb">
 		<div class="pull-left">
-			<h2>Show Choice | |<a href="http://dekwat.buu.in.th:15110/statuswork" > STATUS </a></h2>
+			<h2>แสดงตัวเลือก | |<a href="http://dekwat.buu.in.th:15110/statuswork" > STATUS </a></h2>
 			
             <div class="card-header">
 				<a class="btn btn-primary" 
@@ -19,7 +19,7 @@
 				<td align ="center" >รหัสตัวเลือก</td>
 				<td align ="center" >เลขที่ตัวเลือก</td>
 				<td align ="center" >อธิบายตัวเลือก</td>
-				<td align ="center" colspan=2>Operations</td>
+				<td align ="center" colspan=2>เครื่องมือ</td>
 			</tr>
 			@foreach($choice as $cho)
 			<tr>

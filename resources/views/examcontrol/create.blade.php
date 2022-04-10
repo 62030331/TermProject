@@ -4,7 +4,7 @@
 <div class="row">
     <div class="col-lg-12 margin-tb">
         <div class="pull-left">
-            <h2>Add Exam Control</h2>
+            <h2>เพิ่มรายการควบคุมข้อสอบ</h2>
         </div>
         <div class="pull-right">
             <a class="btn btn-primary" href="{{ route('exam_control.index') }}"> Back</a>
@@ -29,19 +29,19 @@
          
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>exc_id</strong>
-                <input type="text" name="exc_id" class="form-control" placeholder="exc_id">
+                <strong>ลำดับ</strong>
+                <input type="text" name="exc_id" class="form-control" placeholder="ลำดับ">
             </div>
             <div class="form-group">
-                <strong>exc_year</strong>
-                <input type="text" name="exc_year" class="form-control" placeholder="ปีที่ลงทะเบียนรายวิชา">
+                <strong>ปีข้อสอบ</strong>
+                <input type="text" name="exc_year" class="form-control" placeholder="ปีข้อสอบ">
             </div>
             <div class="form-group">
-                <strong>exc_term</strong>
-                <input type="text" name="exc_term" class="form-control" placeholder="exc_term">
+                <strong>ภาคเรียน</strong>
+                <input type="text" name="exc_term" class="form-control" placeholder="ภาคเรียน">
             </div>
             <div class="form-group">
-                <strong>exc_crs_code</strong>
+                <strong>รหัสข้อสอบ</strong>
                 <select class="form-control" id="exc_crs_code" name="exc_crs_code" require>
                     @foreach ($course as $crs)
                     <option value="{{ $crs->crs_code}}">{{ $crs->crs_code }}&nbsp;//&nbsp;{{ $crs->crs_name }}</option>
@@ -50,11 +50,11 @@
                 <!-- <input type="text" name="exc_crs_code" class="form-control" placeholder="exc_crs_code"> -->
             </div>
             <div class="form-group">
-                <strong>exc_sect</strong>
-                <input type="text" name="exc_sect" class="form-control" placeholder="exc_sect">
+                <strong>กลุ่มที่ลงทะเบียน</strong>
+                <input type="text" name="exc_sect" class="form-control" placeholder="กลุ่ม">
             </div>
             <div class="form-group">
-                <strong>exc_tch_code</strong>
+                <strong>รหัสอาจารย์</strong>
                 <select class="form-control" id="exc_tch_code" name="exc_tch_code" require>
                     @foreach ($teacher as $tea)
                     <option value="{{ $tea->tch_code}}">{{ $tea->tch_code }}&nbsp;//&nbsp;{{ $tea->tch_name }}</option>
@@ -63,23 +63,23 @@
                 <!-- <input type="text" name="exc_tch_code" class="form-control" placeholder="exc_tch_code"> -->
             </div>
             <div class="form-group">
-                <strong>exc_time</strong>
-                <input type="time" name="exc_time" class="form-control" placeholder="exc_time">
+                <strong>เวลาเริ่มทำข้อสอบ</strong>
+                <input type="time" name="exc_time" class="form-control" placeholder="เวลาเริ่มทำข้อสอบ">
             </div>
             <!-- เปลี่ยน int(11) to varchar(11) for exam_control -->
             <div class="form-group">
-                <strong>exc_status</strong>
+                <strong>สถานะ</strong>
                 <input type="radio" name="exc_status" id="exc_status" value="TRUE">TRUE
                 <input type="radio" name="exc_status" id="exc_status" value="FALSE">FALSE
                 <!-- <input type="text" name="exc_status" class="form-control" placeholder="exc_status"> -->
             </div>
             <div class="form-group">
-                <strong>exc_date_start</strong>
-                <input type="date" name="exc_date_start" class="form-control" placeholder="exc_date_start">
+                <strong>วันที่เริ่มทำข้อสอบ</strong>
+                <input type="date" name="exc_date_start" class="form-control" placeholder="วันที่เริ่มทำข้อสอบ">
             </div>
             <div class="form-group">
-                <strong>exc_date_stop</strong>
-                <input type="date" name="exc_date_stop" class="form-control" placeholder="exc_date_stop">
+                <strong>วันที่หมดเวลาทำข้อสอบ</strong>
+                <input type="date" name="exc_date_stop" class="form-control" placeholder="วันที่หมดเวลาทำข้อสอบ">
             </div>
             <div class="card-footer ml-auto mr-auto" align=center>
                 <button type="reset" class="btn btn-danger">ยกเลิก</button>

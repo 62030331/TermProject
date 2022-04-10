@@ -4,7 +4,7 @@
 <div class="row">
     <div class="col-lg-12 margin-tb">
         <div class="pull-left">
-            <h2>Add Course</h2>
+            <h2>เพิ่มรายวิชา</h2>
         </div>
         <div class="pull-right">
             <a class="btn btn-primary" href="{{ route('course.index') }}"> Back</a>
@@ -39,7 +39,7 @@
             </div>
 
             <div class="form-group">
-                <strong>crs_active</strong>
+                <strong>สถานะรายวิชา</strong>
                 <input type="text" name="crs_active" class="form-control" placeholder="crs_active">
             </div>
             <div class="card-footer ml-auto mr-auto" align=center>

@@ -4,7 +4,7 @@
 <div class="row">
     <div class="col-lg-12 margin-tb">
         <div class="pull-left">
-            <h2>Add Exam</h2>
+            <h2>เพิ่มการข้อสอบ</h2>
         </div>
         <div class="pull-right">
             <a class="btn btn-primary" href="{{ route('exam.index') }}"> Back</a>
@@ -29,15 +29,15 @@
          
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>รหัสการสอบ</strong>
-                <input type="text" name="ex_id" class="form-control" placeholder="รหัสการสอบ">
+                <strong>ลำดับ</strong>
+                <input type="text" name="ex_id" class="form-control" placeholder="ลำดับ">
             </div>
             <div class="form-group">
-                <strong>ปีที่สอบ</strong>
-                <input type="number" name="ex_year" class="form-control" min="2555" max="2575" placeholder="ปีที่สอบ">
+                <strong>ปีการศึกษา</strong>
+                <input type="number" name="ex_year" class="form-control" min="2555" max="2575" placeholder="ปีการศึกษา">
             </div>
             <div class="form-group">
-                <strong>เทอมที่สอบ</strong>
+                <strong>เทอม</strong>
                 <select class="form-control" id="ex_term" name="ex_term" require>
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -46,21 +46,21 @@
             </div>
             <div class="form-group">
                 <strong>วิชา</strong>
-                <select class="form-control" id="enr_crs_code" name="enr_crs_code" require>
+                <select class="form-control" id="ex_crs_code" name="ex_crs_code" require>
                     @foreach ($course as $crs)
-                    <option value="{{ $crs->crs_code}}">{{ $crs->crs_code }}&nbsp;//&nbsp;{{ $crs->crs_name }}</option>
+                    <option value="{{$crs->crs_code}}">{{ $crs->crs_code }}&nbsp;//&nbsp;{{ $crs->crs_name }}</option>
                     @endforeach
                 </select>
             </div>
             <div class="form-group">
-                <strong>กลุ่มที่สอบ</strong>
+                <strong>กลุ่ม</strong>
                 <input type="text" name="ex_crs_sect" class="form-control" placeholder="กลุ่ม">
             </div>
             <div class="form-group">
                 <strong>นักศึกษา</strong>
-                <select class="form-control" id="enr_std_code" name="enr_std_code" require>
+                <select class="form-control" id="ex_std_code" name="ex_std_code" require>
                     @foreach ($student as $std)
-                    <option value="{{ $std->std_code}}">{{ $std->std_code }}&nbsp;//&nbsp;{{ $std->std_name }}</option>
+                    <option value="{{ $std->std_code }}">{{ $std->std_code }}&nbsp;//&nbsp;{{ $std->std_name }}</option>
                     @endforeach
                 </select>
             </div>

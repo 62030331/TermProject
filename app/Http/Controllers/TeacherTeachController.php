@@ -85,9 +85,13 @@ class TeacherTeachController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
-    {
+    {   $teacherteach =  DB::table('teacher_teach')
+                            ->join('course','teacher_teach.tt_crs_code','=','course.crs_code')
+                            ->join('teacher','teacher_teach.tt_tch_code','=','teacher.tch_code')
+                            ->orderby('teacher_teach.tt_year','desc')
+                            ->get();
        
-        $teacherteach = DB::table('teacher_teach')->where('tt_crs_code','=',$id)->get ();
+        // $teacherteach = DB::table('teacher_teach')->where('tt_crs_code','=',$id)->get ();
                                                 //   ->where('tt_tch_code','=',$tt_tch_code)
                                                   
         return view('teacherteach.edit', compact('teacherteach'));
@@ -131,10 +135,13 @@ class TeacherTeachController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($tt_crs_code,$tt_year,$tt_tch_code,$tt_sect)
     {
         DB::table('teacher_teach') ->where('tt_crs_code','=',$tt_crs_code)
-                                    ->delete();
+                                   ->where('tt_year','=',$tt_year)
+                                   ->where('tt_tch_code','=',$tt_tch_code)
+                                   ->where('tt_sect','=',$tt_sect)
+                                   ->delete();
         
         return redirect('teacher_teach');
     }
