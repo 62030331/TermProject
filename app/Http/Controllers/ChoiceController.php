@@ -96,13 +96,31 @@ class ChoiceController extends Controller
             'ch_desc'=>'required'
         ]);
     
-        DB::table('choice')->where('ch_qs_id','=',$id)->update([
-            'ch_qs_id' => $request->ch_qs_id,
-            'ch_no' => $request->ch_no,
-            'ch_desc' => $request->ch_desc
-        ]);
+        // DB::table('choice')->where('ch_qs_id','=',$id)->update([
+        //     'ch_qs_id' => $request->ch_qs_id,
+        //     'ch_no' => $request->ch_no,
+        //     'ch_desc' => $request->ch_desc
+        // ]);
+        
         return redirect('choice');
     }
+    // {
+    //     $request->validate([
+    //         'ch_qs_id'=>'required',
+    //         'ch_no'=>'required',
+    //         'ch_desc'=>'required'
+    //     ]);
+    //     try {
+            
+    //         DB::select('call edit_Chno(?,?,?)',
+    //         [$request->ch_qs_id,$request->ch_no,$request->ch_desc]);
+    //         } catch(ValidationException $e)
+    //         {
+    //             DB::rollback();
+    //         }
+    //         DB::commit();
+    //     return redirect('choice');
+    // }
 
     /**
      * Remove the specified resource from storage.
