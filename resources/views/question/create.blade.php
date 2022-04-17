@@ -94,6 +94,11 @@
                 <input type="text" name="ch_no4" class="form-control" placeholder="ตัวเลือกที่ 4">
             </div>
 
+            <div class="form-group">
+                <strong>สถานะ</strong>
+                <input type="text"   name="qs_status_code" class="form-control" placeholder="สถานะ">
+            </div>
+
         
             <div class="card-footer ml-auto mr-auto" align=center>
                  <div class="pull-center">

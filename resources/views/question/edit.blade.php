@@ -98,6 +98,11 @@
                 <strong>วันที่ทำข้อสอบ</strong>
                 <input type="date" value="{{ $qui->qs_ex_date}}" name="qs_ex_date" class="form-control" placeholder=" date">
             </div>
+
+            <div class="form-group">
+                <strong>สถานะ</strong>
+                <input type="text"   value="{{ $qui->qs_status_code}}"name="qs_status_code" class="form-control" placeholder="text">
+            </div>
         
            
             <div class="card-footer ml-auto mr-auto" align=center>

@@ -53,7 +53,8 @@ class QuestionController extends Controller
             'qs_score'=>'required',
             'qs_crs_code'=>'required',
             'qs_tch_code'=>'required',
-            'qs_ex_date'=>'required'
+            'qs_ex_date'=>'required',
+            'qs_status_code'=>'required'
         ]);
     DB::beginTransaction();
     try {
@@ -66,7 +67,8 @@ class QuestionController extends Controller
             'qs_score'=> $request->qs_score,
             'qs_crs_code'=> $request->qs_crs_code,
             'qs_tch_code' => $request->qs_tch_code,
-            'qs_ex_date'=> $request->qs_ex_date
+            'qs_ex_date'=> $request->qs_ex_date,
+            'qs_status_code'=> $request->qs_status_code
         ]);
         DB::select('call CreateQuestiontwo(?,?,?,?,?)',[$request->qs_id,$request->ch_no1,$request->ch_no2,$request->ch_no3,$request->ch_no4]);
         } catch(ValidationException $e)
@@ -126,7 +128,8 @@ class QuestionController extends Controller
             'qs_score'=>'required',
             // 'qs_crs_code'=>'required',
             'qs_tch_code'=>'required',
-            'qs_ex_date'=>'required'
+            'qs_ex_date'=>'required',
+            'qs_status_code'=>'required'
         ]);
         DB::beginTransaction();
         try {
@@ -139,7 +142,8 @@ class QuestionController extends Controller
             'qs_score'=> $request->qs_score,
             // 'qs_crs_code'=> $request->qs_crs_code,
             'qs_tch_code' => $request->qs_tch_code,
-            'qs_ex_date'=> $request->qs_ex_date
+            'qs_ex_date'=> $request->qs_ex_date,
+            'qs_status_code'=> $request->qs_status_code
         ]);
         DB::select('call EditChoice(?,?,?,?,?)',[$request->qs_id,$request->ch_no1,$request->ch_no2,$request->ch_no3,$request->ch_no4]);
         } catch(ValidationException $e)

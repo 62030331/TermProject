@@ -24,6 +24,7 @@
 				<td align ="center" >วิชา</td>
 				<td align ="center" >อาจารย์</td>
 				<td align ="center" >วันที่ทำข้อสอบ</td>
+				<td align ="center" >สถานะ</td>
 				<td align ="center" colspan=2>เครื่องมือ</td>
 			</tr>
 			@foreach($question as $qui)
@@ -36,6 +37,7 @@
 				<td align ="center" >{{ $qui->crs_name }}</td>
 				<td align ="center">{{ $qui->tch_name }}</td>
 				<td align ="center" >{{ $qui->qs_ex_date }}</td>
+				<td align ="center" >{{ $qui->qs_status_code }}</td>
 				
 
 				<td align ="center" >
